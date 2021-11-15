@@ -4,14 +4,14 @@
 xterm -e "cd $(pwd)/../../..;
 source devel/setup.bash;
 export ROBOT_INITIAL_POSE='-x -8.5 -y -4.5 -z 0 -R 0 -P 0 -Y 0';
-roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/home/workspace/catkin_ws/src/RoboND_Home_service_robot/map/home_service.world" & 
+roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(pwd)/src/RoboND_Home_service_robot/map/home_service.world" & 
 
 sleep 10
 
 # launch amcl_demo.launch for localization
 xterm -e "cd $(pwd)/../../..;
 source devel/setup.bash;
-roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/workspace/catkin_ws/src/RoboND_Home_service_robot/map/home_service.yaml" &
+roslaunch turtlebot_gazebo amcl_demo.launch map_file:=$(pwd)/src/RoboND_Home_service_robot/map/home_service.yaml" &
 
 sleep 5
 
